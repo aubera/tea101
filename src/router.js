@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Details from "./views/Details.vue";
+import Detail from "./views/Detail.vue";
+import LeaveOpinion from "./views/LeaveOpinion.vue";
 
 Vue.use(Router);
 
@@ -13,9 +14,14 @@ export default new Router({
       component: Home
     },
     {
-      path: "/details",
-      name: "details",
-      component: Details
+      path: "/detail",
+      name: "detail",
+      component: Detail
+    },
+    {
+      path: "/feedback",
+      name: "feedback",
+      component: LeaveOpinion
     }
   ]
 });
