@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Delicious</h1>
     <h1>Delights</h1>
-    <button @click="$router.push('details')">
+    <button @click="$router.push('detail')">
       <h2>Check 'em out!</h2>
     </button>
   </div>
