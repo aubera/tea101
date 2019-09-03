@@ -4,17 +4,47 @@
     <div class="opinion">
       <h1>Leave your opinion</h1>
       <label for="name">NAME</label>
-      <input type="text" name="name" placeholder="Type here..." />
+      <input
+        type="text"
+        name="name"
+        v-model="userOpinion.name"
+        placeholder="Type here..."
+      />
       <label for="opinion">OPINION</label>
-      <textarea type="text" name="opinion" rows="5" placeholder="Type here...">
+      <textarea
+        type="text"
+        name="opinion"
+        v-model="userOpinion.opinion"
+        rows="5"
+        placeholder="Type here..."
+      >
       </textarea>
-      <button type="submit" name="button">SUBMIT</button>
+      <button type="button" name="button" @click.prevent="submit">
+        SUBMIT
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { eventBus } from "../main";
+
+export default {
+  data() {
+    return {
+      userOpinion: {
+        name: "",
+        opinion: ""
+      }
+    };
+  },
+  methods: {
+    submit() {
+      eventBus.$emit("userOpinion", this.userOpinion);
+      this.$router.push("detail");
+    }
+  }
+};
 </script>
 
 <style scoped lang="sass">
