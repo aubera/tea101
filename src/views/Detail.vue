@@ -11,9 +11,9 @@
       <Description :tea="teas[selectedTeaId].description" />
     </div>
     <Opinion :user="opinions[selectedUserId]" />
-    <!-- <ul>
+    <ul>
       <li v-for="item in opinions">{{ item.name }}</li>
-    </ul> -->
+    </ul>
   </div>
 </template>
 
